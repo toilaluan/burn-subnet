@@ -52,7 +52,7 @@ while True:
             uids=uids,
             weights=weights,
             netuid=args.netuid,
-            version=10,
+            version_key=10,
         )
         print("Result: ", result)
     except Exception as e:
