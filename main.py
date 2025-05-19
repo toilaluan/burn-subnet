@@ -11,13 +11,13 @@ parser.add_argument(
     default=47,
 )
 parser.add_argument(
-    "--wallet.name",
+    "--wallet-name",
     type=str,
     default="default",
 )
 
 parser.add_argument(
-    "--wallet.hotkey",
+    "--wallet-hotkey",
     type=str,
     default="default",
 )
@@ -30,13 +30,17 @@ parser.add_argument(
 
 args = parser.parse_args()
 
-
+print("Initializing Subtensor...")
 SUBTENSOR = bt.subtensor()
 METAGRAPH = bt.metagraph(args.netuid)
 WALLET = bt.wallet(
-    name=args.wallet.name,
-    hotkey=args.wallet.hotkey,
+    name=args.wallet_name,
+    hotkey=args.wallet_hotkey,
 )
+
+print("Subtensor initialized.")
+print("Wallet initialized.")
+print("Metagraph initialized.")
 
 while True:
     print("Burning Subnet Uid: ", args.burn_uid, " at ", time.time())
