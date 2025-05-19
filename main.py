@@ -51,7 +51,7 @@ while True:
             wallet=WALLET,
             uids=uids,
             weights=weights,
-            netuid=netuid,
+            netuid=args.netuid,
             version=10,
         )
         print("Result: ", result)
